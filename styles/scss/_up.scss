@@ -1,0 +1,10 @@
+.up {
+  overflow: hidden;
+  border-radius: 18px;
+  cursor: pointer;
+
+  &__img {
+    @include fluid(width, 40px, 46px);
+    @include fluid(height, 40px, 46px);
+  }
+}
