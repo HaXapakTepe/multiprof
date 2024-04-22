@@ -42,6 +42,12 @@
 @media(max-width: 576px) {
   .language {
     &__icon {
+      svg {
+        circle {
+          stroke: #1730BD;
+        }
+      }
+
       &:last-child {
         svg {
           path {
