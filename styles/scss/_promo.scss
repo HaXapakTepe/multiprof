@@ -98,10 +98,11 @@
       color: #1730BD;
       line-height: 1;
       z-index: 1;
-      border: 1px solid #EBEDF1;
+      // border: 1px solid #EBEDF1;
+      outline: 1px solid #EBEDF1;
       border-bottom-right-radius: 30px;
       box-shadow: 0px 4px 40px 0px rgba(99, 138, 225, 0.15);
-      transition: color 0.23s ease-in-out, border-color 0.23s ease-in-out;
+      transition: color 0.23s ease-in-out, outline-color 0.23s ease-in-out;
 
       &::after {
         content: '';
@@ -119,7 +120,7 @@
 
       &:hover {
         color: #fff;
-        border-color: #1730BD;
+        outline-color: transparent;
 
         &::after {
           width: 650px;

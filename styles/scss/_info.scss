@@ -1,7 +1,7 @@
 .info {
   &__wrapper {
     @include fluid(padding-top, 30px, 111px);
-    @include fluid(padding-bottom, 30px, 60px);
+    @include fluid(padding-bottom, 30px, 30px);
   }
 
   &__inner {
@@ -74,7 +74,7 @@
 
   .btn {
     position: relative;
-    @include fluid(bottom, -55px, -65px);
+    @include fluid(bottom, -54px, -64px);
   }
 }
 

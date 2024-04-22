@@ -17,10 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const burger = document.querySelector('.burger')
 
-	const toggleMenu = () => {
+	const toggleMenu = e => {
+		e.stopPropagation()
 		menu.classList.toggle('menu--active')
 		burger.classList.toggle('burger--active')
 		body.classList.toggle('no-scroll')
+	}
+
+	const addMenu = e => {
+		e.stopPropagation()
+		menu.classList.add('menu--active')
+		burger.classList.add('burger--active')
+		body.classList.add('no-scroll')
+	}
+
+	const removeMenu = e => {
+		e.stopPropagation()
+		menu.classList.remove('menu--active')
+		burger.classList.remove('burger--active')
+		body.classList.remove('no-scroll')
 	}
 
 	const clickOutsideMenu = event => {
@@ -32,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	burger.addEventListener('click', toggleMenu)
-	close.addEventListener('click', toggleMenu)
+	menu.addEventListener('click', addMenu)
+	close.addEventListener('click', removeMenu)
 	document.addEventListener('click', clickOutsideMenu)
 
 	window?.addEventListener('scroll', function () {
@@ -51,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (!language.contains(event.target)) {
 			language.classList.remove('language--active')
 		} else {
-			language.classList.toggle('language--active')
+			language.classList.add('language--active')
 		}
 	})
 
