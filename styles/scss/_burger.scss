@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 68px;
   @include fluid(gap, 68px, 80px);
   position: relative;
   background: transparent;
@@ -66,6 +65,38 @@
 
         &::after {
           transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .burger {
+    margin-top: 0;
+
+    &__line {
+      background-color: #1730bd;
+
+      &::before,
+      &::after {
+        background-color: #1730bd;
+      }
+    }
+
+    &--active {
+      .burger {
+        &__line {
+          width: 0;
+          background: transparent;
+
+          &::before {
+            transform: translateY(-6px)
+          }
+
+          &::after {
+            transform: translateY(6px)
+          }
         }
       }
     }

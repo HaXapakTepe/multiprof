@@ -207,6 +207,7 @@
       padding-top: 20px;
       padding-bottom: 20px;
       grid-template-columns: 1fr;
+      min-height: 680px;
     }
 
     &__item {
@@ -271,6 +272,7 @@
         &__inner {
           padding-top: 40px;
           padding-bottom: 40px;
+          min-height: unset;
         }
 
         &__info {
@@ -297,21 +299,8 @@
 
 @media (max-width: 576px) {
   .services {
-    &__tab {
-      &-top {
-        grid-template-columns: 1fr;
-      }
-    }
-
     &__target {
-      &.tab__target--active {
-        border-color: #fff;
-      }
-
-      &:not(&:first-child) {
-        border: none;
-        padding-top: 10px;
-      }
+      font-size: 14px;
     }
   }
 }

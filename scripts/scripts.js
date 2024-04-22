@@ -1,11 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const body = document.querySelector('body')
-	const burger = document.querySelector('.burger')
 	const menu = document.querySelector('.menu')
+	const close = document.querySelector('.menu__close')
 	const tabs = document.querySelectorAll('.tab__target')
 	const pages = document.querySelectorAll('.tab__info')
 	const up = document.querySelector('.up')
-	const menuItem = document.querySelectorAll('.menu__item')
+	const removeMobile = document.querySelector('.removeMobile')
+
+	function deleteMobile(el) {
+		el.remove()
+	}
+
+	if (innerWidth < 577) {
+		deleteMobile(removeMobile)
+	}
+
+	const burger = document.querySelector('.burger')
 
 	const toggleMenu = () => {
 		menu.classList.toggle('menu--active')
@@ -22,17 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	burger.addEventListener('click', toggleMenu)
+	close.addEventListener('click', toggleMenu)
 	document.addEventListener('click', clickOutsideMenu)
 
-	// if (burger) {
-	// 	menuItem.forEach(item => {
-	// 		item.addEventListener('click', () => {
-	// 			burger.classList.toggle('active')
-	// 			menu.classList.remove('active')
-	// 			body.classList.remove('no-scroll')
-	// 		})
-	// 	})
-	// }
+	window?.addEventListener('scroll', function () {
+		const scrollTop =
+			document.documentElement.scrollTop || document.body.scrollTop
+		if (scrollTop > 100) {
+			up.classList.remove('up--hidden')
+		} else {
+			up.classList.add('up--hidden')
+		}
+	})
 
 	document.addEventListener('click', function (event) {
 		const language = document.querySelector('.language')
@@ -122,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	var teamSwiper = new Swiper('.team__swiper', {
 		spaceBetween: 5,
+		loop: true,
 		navigation: {
 			nextEl: '.team__arrow-next',
 			prevEl: '.team__arrow-prev',

@@ -6,7 +6,7 @@
   &__icon {
     transition: background-color .23s ease-in-out;
     overflow: hidden;
-    border-radius: 14px;
+    @include fluid(border-radius, 10px, 14px);
 
     svg {
       @include fluid(width, 30px, 43px);

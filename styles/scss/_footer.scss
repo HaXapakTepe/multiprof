@@ -16,11 +16,12 @@
   }
 
   &__elem {
-    position: absolute;
+    position: fixed;
+    z-index: 10;
     @include fluid(right, 15px, 60px);
     @include fluid(bottom, 20px, 40px);
-    display: flex;
     @include fluid(gap, 15px, 30px);
+    display: flex;
     align-items: end;
 
     .up {
@@ -98,31 +99,21 @@
     &__inner {
       grid-template-columns: repeat(2, 1fr);
     }
-
-    &__elem {
-      bottom: 70px;
-    }
   }
 }
 
 @media(max-width: 768px) {
   .footer {
+    padding-bottom: 120px;
+
     &__inner {
       grid-template-columns: 1fr;
-      padding-bottom: 120px;
     }
 
     &__item {
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    &__elem {
-      left: 50%;
-      transform: translateX(-50%);
-      right: unset;
-      bottom: 110px;
     }
 
     .logo {

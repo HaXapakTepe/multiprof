@@ -122,12 +122,15 @@
 
 @media(max-width: 576px) {
   .header {
+    flex-wrap: wrap;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding-left: 55px;
+    grid-template-columns: 18px 154px 1fr;
+    padding-left: 15px;
+
+    gap: 20px;
 
     &__container {
-      grid-area: 2/1/3/3;
+      grid-area: 2/1/3/4;
     }
 
     &__icons {

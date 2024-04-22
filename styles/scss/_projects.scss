@@ -152,16 +152,21 @@
       margin-bottom: 0;
       display: flex;
       flex-direction: column;
-      align-items: center;
 
       &-box {
         max-width: unset;
+      }
+
+      &-text {
+        max-width: unset;
+        text-align: left;
       }
 
       &--gray {
         top: unset;
         margin-left: 0;
         padding-top: 20px;
+        padding-right: 20px;
       }
     }
   }
